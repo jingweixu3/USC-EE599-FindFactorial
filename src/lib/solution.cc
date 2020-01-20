@@ -1,33 +1,30 @@
 #include "solution.h"
 #include <iostream>
-int Solution::FindMax(std::vector<int> &inputs) {
-  if (inputs.size() == 0) {
+int Solution::FindFactorial(int n) {
+  if(n < 0){
     return -1;
   }
-  int result = INT32_MIN;
-  for (auto n : inputs) {
-    if (n > result) {
-      result = n;
+  else if(n == 0){
+    return 1;
+  }
+  else{
+    int result = 1;
+    while(n > 0){
+      result = result * n;
+      n--;
     }
+    return result;
   }
-  return result;
 }
 
-int Solution::FindMaxRecursive(std::vector<int> &inputs) {
-  if (inputs.size() == 0) {
+int Solution::FindFactorialRecursive(int n) {
+  if(n < 0){
     return -1;
   }
-  return FindMaxRecursiveAux(inputs, 0, inputs.size());
-}
-
-int Solution::FindMaxRecursiveAux(std::vector<int> &inputs, int left,
-                                  int right) {
-  if (right == left + 1) {
-    return inputs[left];
+  else if (n == 0){
+    return 1;
   }
-
-  int mid = (right + left) / 2;
-
-  return std::max(FindMaxRecursiveAux(inputs, left, mid),
-                  FindMaxRecursiveAux(inputs, mid, right));
+  else {
+    return n * FindFactorial(n-1);
+  }
 }

@@ -3,12 +3,17 @@
 
 int main() {
   Solution solution;
-  std::vector<int> inputs = {1, 2, 3, 4};
-  std::cout << "inputs: {1, 2, 3, 4}, output: " << solution.FindMax(inputs)
-            << std::endl;
+  int n = 11;
+  std::cout << "inputs: n = 11, output: " << solution.FindFactorial(n) << std::endl;
+  std::cout << "inputs: n = 11, recursive recursive output: " << solution.FindFactorialRecursive(n) << std::endl;
 
-  inputs = {};
-  std::cout << "inputs: {}, output: " << solution.FindMax(inputs) << std::endl;
+  n = 1;
+  std::cout << "inputs: n = 1, output: " << solution.FindFactorial(n) << std::endl;
+  std::cout << "inputs: n = 1, output: " << solution.FindFactorialRecursive(n) << std::endl;
+
+  n = -5;
+  std::cout << "inputs: n = -5, output: " << solution.FindFactorial(n) << std::endl;
+  std::cout << "inputs: n = -5, output: " << solution.FindFactorialRecursive(n) << std::endl;
 
   return 0;
 }

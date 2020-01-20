@@ -2,30 +2,30 @@
 #include "gtest/gtest.h"
 #include <vector>
 
-TEST(FindMaxTest, HandlesConsecutiveNumbers) {
+TEST(FindFactorial, Handles_Negative_Integer) {
   Solution solution;
-  std::vector<int> inputs = {1, 2, 3, 4};
-  EXPECT_EQ(solution.FindMax(inputs), 4);
-  EXPECT_EQ(solution.FindMaxRecursive(inputs), 4);
+  int inputs = -10;
+  EXPECT_EQ(solution.FindFactorial(inputs), -1);
+  EXPECT_EQ(solution.FindFactorialRecursive(inputs), -1);
 }
 
-TEST(FindMaxTest, HandlesConsecutiveNumbersOddLength) {
+TEST(FindFactorial, Handles_Zero) {
   Solution solution;
-  std::vector<int> inputs = {1, 2, 3, 4, -1};
-  EXPECT_EQ(solution.FindMax(inputs), 4);
-  EXPECT_EQ(solution.FindMaxRecursive(inputs), 4);
+  int inputs = 0;
+  EXPECT_EQ(solution.FindFactorial(inputs), 1);
+  EXPECT_EQ(solution.FindFactorialRecursive(inputs), 1);
 }
 
-TEST(FindMaxTest, HandlesSizeOne) {
+TEST(FindFactorial, Handles_Positive_Integer) {
   Solution solution;
-  std::vector<int> inputs = {2};
-  EXPECT_EQ(solution.FindMax(inputs), 2);
-  EXPECT_EQ(solution.FindMaxRecursive(inputs), 2);
-}
+  int inputs = 11;
+  int expectoutput = 39916800;
+  EXPECT_EQ(solution.FindFactorial(inputs), expectoutput);
+  EXPECT_EQ(solution.FindFactorialRecursive(inputs), expectoutput);
 
-TEST(FindMaxTest, HandlesEmptyVector) {
-  Solution solution;
-  std::vector<int> inputs = {};
-  EXPECT_EQ(solution.FindMax(inputs), -1);
-  EXPECT_EQ(solution.FindMaxRecursive(inputs), -1);
+  inputs = 8;
+  expectoutput = 40320; 
+  EXPECT_EQ(solution.FindFactorial(inputs), expectoutput);
+  EXPECT_EQ(solution.FindFactorialRecursive(inputs), expectoutput);
+
 }

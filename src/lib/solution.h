@@ -6,11 +6,8 @@
 
 class Solution {
 public:
-  int FindMax(std::vector<int> &inputs);
-  int FindMaxRecursive(std::vector<int> &inputs);
-
-private:
-  int FindMaxRecursiveAux(std::vector<int> &inputs, int left, int right);
-};
+  int FindFactorial(int n);
+  int FindFactorialRecursive(int n);
+  };
 
 #endif

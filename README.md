@@ -1,5 +1,5 @@
-# Find Max
-> Finds the maximum value in a C++ Vector
+# Return n-Factorial
+> Return the factorial of a non-negative integer n
 
 ## Installation
 
