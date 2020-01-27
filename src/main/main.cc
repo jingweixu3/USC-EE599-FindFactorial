@@ -1,8 +1,8 @@
 #include "src/lib/solution.h"
 #include <iostream>
+Solution solution;
 
 int main() {
-  Solution solution;
   int n = 11;
   std::cout << "inputs: n = 11, output: " << solution.FindFactorial(n) << std::endl;
   std::cout << "inputs: n = 11, recursive recursive output: " << solution.FindFactorialRecursive(n) << std::endl;
